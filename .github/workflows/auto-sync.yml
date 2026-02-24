@@ -1,0 +1,22 @@
+name: Auto Sync Fork
+
+on:
+  schedule:
+    # 定时任务：这里设置的是每天 UTC 时间 00:00 执行一次（即北京时间早上 8:00）
+    # 你也可以改成每 6 小时执行一次：'0 */6 * * *'
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 保留手动触发按钮，方便测试
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 赋予写权限，允许脚本推送代码
+
+    steps:
+      - name: Sync upstream
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # 注意：这里的 main 是你仓库的主分支名。如果是 master 请改为 master
+        run: |
+          gh repo sync ${{ github.repository }} -b main
