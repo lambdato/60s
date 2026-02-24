@@ -197,7 +197,7 @@ npm install && npx wrangler publish
 |           yijiong           | 15.00  |   QQ   |            a cup of coffee             |
 
 > 如有遗漏，欢迎通过 issue 或者 QQ 群 595941841 反馈。
-
+kork
 </details>
 
 ## 🪪 License （开源协议）
