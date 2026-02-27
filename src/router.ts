@@ -143,6 +143,7 @@ appRouter.get('/douban/weekly/movie', serviceDoubanWeekly.handle('movie'))
 appRouter.get('/douban/weekly/tv_chinese', serviceDoubanWeekly.handle('tv_chinese'))
 appRouter.get('/douban/weekly/tv_global', serviceDoubanWeekly.handle('tv_global'))
 appRouter.get('/douban/weekly/show_chinese', serviceDoubanWeekly.handle('show_chinese'))
+appRouter.get('/douban/weekly/show_global', serviceDoubanWeekly.handle('show_global'))
 
 // === 以下为支持 body 解析参数的接口 ===
 appRouter.all('/og', serviceOG.handle())

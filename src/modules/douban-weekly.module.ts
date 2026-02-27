@@ -2,7 +2,7 @@ import { Common } from '../common.ts'
 
 import type { RouterMiddleware } from '@oak/oak'
 
-type DoubanCategory = 'movie' | 'tv_chinese' | 'tv_global' | 'show_chinese'
+type DoubanCategory = 'movie' | 'tv_chinese' | 'tv_global' | 'show_chinese' | 'show_global'
 
 interface DoubanRawItem {
   rank: number
@@ -60,6 +60,11 @@ const CATEGORY_CONFIG: Record<DoubanCategory, { collection: string; title: strin
     collection: 'show_chinese_best_weekly',
     title: '一周口碑国内综艺榜',
     emoji: '🎤',
+  },
+  show_global: {
+    collection: 'show_global_best_weekly',
+    title: '一周口碑全球综艺榜',
+    emoji: '🌍',
   },
 }
 
